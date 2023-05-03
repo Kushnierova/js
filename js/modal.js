@@ -28,5 +28,6 @@ const root = document.getElementById('root');
 
 const div1 = document.createElement('div')
 const div2 = document.createElement('div');
-
+div1.classList.add('left')
+div2.classList.add('right');
 root.append(div1, div2);

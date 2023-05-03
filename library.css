@@ -1,0 +1,12 @@
+#root{
+    display: flex;
+    height: 100vh;
+}
+.left{
+    width: 40%;
+    background-color:rgb(113, 180, 239);
+}
+.right{
+    background-color:lemonchiffon;
+    width: 60%;
+}

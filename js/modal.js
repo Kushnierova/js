@@ -28,6 +28,22 @@ const root = document.getElementById('root');
 
 const div1 = document.createElement('div')
 const div2 = document.createElement('div');
+
 div1.classList.add('left')
 div2.classList.add('right');
+
 root.append(div1, div2);
+const title = document.createElement('h1')
+title.textContent = 'Libruary'
+
+const list = document.createElement('ul')
+const addBtn = document.createElement('button')
+addBtn.textContent = "Add"
+
+div1.append(title, list, addBtn)
+
+function renderList () {
+  const markup = books.map(({id, title}) =>'<li id=${id}><p>${title}</p><button>Delite</button><button>Edit</button></li>').join('')
+  list.insertAdjacentHTML("beforeend", markup)
+}
+renderList()

@@ -37,11 +37,11 @@ const title = document.createElement("h1");
 title.textContent = "Libruary";
 
 const list = document.createElement("ul");
-list.classList.add('list')
+list.classList.add('list');
 
 const addBtn = document.createElement("button");
 addBtn.textContent = "Add";
-addBtn.classList.add('add')
+addBtn.classList.add('add');
 
 div1.append(title, list, addBtn);
 
@@ -53,5 +53,27 @@ function renderList() {
     )
     .join("");
   list.insertAdjacentHTML("beforeend", markup);
+  const titles = document.querySelectorAll('.item-title');
+  // console.log(titles);
+  titles.forEach(title => title.addEventListener('click', renderPreview));
 }
 renderList();
+
+function renderPreview(e) {
+// console.log(e.target.textContent)
+const text = e.target.textContent;
+const book = books.find(({title}) => title === text);
+// console.log(book);
+const markup = createPreviewMarkup(book);
+div2.innerHTML = '';
+div2.insertAdjacentHTML('afterbegin', markup);
+}
+
+function createPreviewMarkup({id, title, author, img, plot}) {
+  return  `<div data-id=${id}>
+  <h2>${title}</h2>
+  <p>${author}</p>
+  <img srv="${img}" alt="${title}">
+  <p>${plot}</p>
+  </div>`
+}

@@ -5,8 +5,29 @@
 .left{
     width: 40%;
     background-color:rgb(113, 180, 239);
+    padding: 10px;
 }
 .right{
     background-color:lemonchiffon;
     width: 60%;
+    padding: 10px;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.item{
+    display: flex;
+
+}
+.item-title{
+    margin-right: auto;
+}
+.delete{
+    margin-right: 10px;
+}
+.add{
+    display: block;
+    margin: 0 auto;
 }

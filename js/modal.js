@@ -52,6 +52,7 @@ function renderList() {
         `<li id=${id} class='item'><p class='item-title'>${title}</p><button class='delete'>Delete</button><button class='edit'>Edit</button></li>`
     )
     .join("");
+  list.innerHTML = "";
   list.insertAdjacentHTML("beforeend", markup);
   const items = document.querySelectorAll(".item");
   items.forEach((item) => item.addEventListener("click", itemClickHandler));
@@ -60,8 +61,13 @@ renderList();
 
 function itemClickHandler(e) {
   // console.log(e);
+  // console.log(e.currentTuarget);
+  const id = e.currentTarget.id;
+  // console.log(id);
   if (e.target.nodeName === "P") {
     renderPreview(e.target.textContent);
+  } else if (e.target.textContent === "Delete") {
+    deleteBook(id);
   }
 }
 
@@ -80,4 +86,10 @@ function createPreviewMarkup({ id, title, author, img, plot }) {
   <img srv="${img}" alt="${title}">
   <p>${plot}</p>
   </div>`;
+}
+
+function deleteBook(bookId) {
+  books = books.filter(({ id }) => id !== bookId);
+  renderList();
+  
 }

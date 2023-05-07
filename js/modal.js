@@ -61,7 +61,7 @@ renderList();
 
 function itemClickHandler(e) {
   // console.log(e);
-  // console.log(e.currentTuarget);
+  // console.log(e.currentTarget);
   const id = e.currentTarget.id;
   // console.log(id);
   if (e.target.nodeName === "P") {

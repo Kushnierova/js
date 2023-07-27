@@ -149,3 +149,41 @@ for (let i = 0; i < carts.length; i += 1) {
   totalWithTax += Math.round(carts[i]);
 }
 console.log(`Total+tax=`, totalWithTax);
+
+// ЗАДАЧА 2
+
+// Напиши скрипт який буде підраховувати суму всіх парних і всіх не парних чисел в масиві
+
+const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 11];
+let totalEven = 0;
+let totalOdd = 0;
+
+for (let number of numbers) {
+  if (number % 2 === 0) {
+    totalEven += number;
+  } else {
+    totalOdd += number;
+  }
+}
+console.log("Сума парних чисел:", totalEven);
+console.log("Сума не парних чисел", totalOdd);
+
+// ЗАДАЧА 3
+// Напиши скрипт пошуку логіна
+//
+// Якщо логін знайдено, вивести повідомлення 'Вітаємо, [логін]'
+// Якщо логін не знайдено, вивести повідомлення 'Пробачте, такого логіну як [логін] не знайдено'
+const logins = [`jnknkknk`, `kiwi12345`, `poly12345`, `nklnklnkj`];
+const loginFind = `poly12345`;
+let mes = "";
+
+for (let i = 0; i < logins.length; i += 1) {
+  const login = logins[i];
+
+  if (login === loginFind) {
+    mes = `Вітаємо, ${login}`;
+    break;
+  }
+  mes = `Пробачте, такого логіну як ${login} не знайдено`;
+}
+console.log(mes);

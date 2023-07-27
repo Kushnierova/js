@@ -113,12 +113,39 @@ console.log([1, 2, 3] === [1, 2, 3]); //false
 // console.log(friends[5]);
 
 // for (let i = 0; i < friends.length; i += 1) {
+//Додаємо до кожного елемента масиву `*`
 //   friends[i] += `*`;
 //   console.log(friends[i]);
 // }
 
 //Краще робити так(якщо не потрібен індекс,або не потрібно змінювати елемент)
 
-// for (const friend of friends) {
-//   console.log(friend);
-// }
+for (let friend of friends) {
+  console.log(friend);
+}
+
+//ЗАДАЧА 1
+//Порахувати загальну суму покупок в корзині
+
+const carts = [54, 28, 105, 70, 92, 17, 120];
+let total = 0;
+
+// 1 перебрати масив
+// зробити перемінну total
+// додати всі числа
+for (let cart of carts) {
+  console.log(cart);
+  total += cart;
+}
+console.log(`Total:`, total);
+
+//додати податок до кожного елемента масиву
+const tax = 0.2;
+let totalWithTax = 0;
+
+for (let i = 0; i < carts.length; i += 1) {
+  carts[i] = carts[i] * tax + carts[i];
+  console.log(carts[i]);
+  totalWithTax += Math.round(carts[i]);
+}
+console.log(`Total+tax=`, totalWithTax);

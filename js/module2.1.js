@@ -203,28 +203,28 @@ let mes = "";
 //   mes = `Пробачте, такого логіну як ${login} не знайдено`;
 // }
 
-for (let login of logins) {
-  if (login === loginFind) {
-    mes = `Вітаємо, ${login}`;
-    break;
-  }
-  mes = `Пробачте, такого логіну як ${login} не знайдено`;
-}
-console.log(mes);
+// for (let login of logins) {
+//   if (login === loginFind) {
+//     mes = `Вітаємо, ${login}`;
+//     break;
+//   }
+//   mes = `Пробачте, такого логіну як ${login} не знайдено`;
+// }
+// console.log(mes);
 
-// МЕТОД .INCLUDES
+// // МЕТОД .INCLUDES
 
-console.log(logins.includes(`kiwi12345`)); //true
-console.log(logins.includes(`kiwi`)); //false
-console.log(logins.includes(loginFind)); //true
+// console.log(logins.includes(`kiwi12345`)); //true
+// console.log(logins.includes(`kiwi`)); //false
+// console.log(logins.includes(loginFind)); //true
 
-// ТЕРНАРНИЙ ОПЕРАТОР
+// // ТЕРНАРНИЙ ОПЕРАТОР
 
-const mess = logins.includes(loginFind)
-  ? `Вітаємо, ${loginFind}`
-  : `Пробачте, такого логіну як ${loginFind} не знайдено`;
+// const mess = logins.includes(loginFind)
+//   ? `Вітаємо, ${loginFind}`
+//   : `Пробачте, такого логіну як ${loginFind} не знайдено`;
 
-console.log(mess);
+// console.log(mess);
 
 // ЗАДАЧА 4
 

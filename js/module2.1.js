@@ -22,8 +22,8 @@ friends[3] = `Chandler Bing`;
 // const name = "Monica";
 // console.log(name.split("")); // ['M', 'o', 'n', 'i', 'c', 'a']
 
-const message = "Monica, Rachel, Joey, Phoebe, Chandler, Ros";
-console.log(message.split(", ")); // ['Monica', 'Rachel', 'Joey', 'Phoebe', 'Chandler', 'Ros']
+const stringOfFriends = "Monica, Rachel, Joey, Phoebe, Chandler, Ros";
+console.log(stringOfFriends.split(", ")); // ['Monica', 'Rachel', 'Joey', 'Phoebe', 'Chandler', 'Ros']
 
 // Метод indexOf()
 // indexOf(value) повертає перший індекс, в якому елемент зі значенням value
@@ -33,7 +33,7 @@ console.log(message.split(", ")); // ['Monica', 'Rachel', 'Joey', 'Phoebe', 'Cha
 console.log(friends.indexOf("Monica Geller")); // 0
 console.log(friends.indexOf("Robin Scherbatsky")); // -1
 
-// Метод includes()
+//==================================================================================== Метод includes()
 // includes(value) перевіряє, чи містить масив елемент зі значенням value і
 // повертає true або false відповідно. Застосування цього методу корисне в ситуаціях,
 // коли необхідно перевірити, чи є елемент в масиві і не важлива його позиція (індекс).
@@ -43,12 +43,28 @@ console.log(friends.includes("Marshall Eriksen")); // false
 
 console.table(friends);
 
-// Метод slice()
+// ========================================================================================Метод slice()
 // slice(begin, end) повертає новий масив,
 //  що містить копію частини вихідного масиву, не змінюючи його.
 console.log(friends.slice(1, 3)); // ['Lily Aldrin', 'Barney Stinson']
 
-// Метод splice()
+// Зробити з масиву string
+let string = ``;
+for (const friend of friends) {
+  string += friend + `,`;
+}
+
+// console.log(string.slice(0, string.length - 1)); //Monica Geller, Lily Aldrin, Barney Stinson, Chandler Bing
+// console.log(string); //Monica Geller, Lily Aldrin, Barney Stinson, Chandler Bing,
+
+// Метод slice не деструктивний, він лише повертає нову копію
+string = string.slice(0, string.length - 1);
+console.log(string); //Monica Geller, Lily Aldrin, Barney Stinson, Chandler Bing
+
+//=========================================================================================Метод join
+const string2 = friends.join(", ");
+console.log(string2); //Monica Geller, Lily Aldrin, Barney Stinson, Chandler Bing
+//============================================================================================ Метод splice()
 
 // Щоб видалити елементи в масиві, передаються два аргументи.
 // splice(position, num)
@@ -83,7 +99,7 @@ console.log(friends); // ['Monica Geller', 'Lily Aldrin', 'Phoebe Buffay', 'Chan
 friends.splice(1, 1, `Rachel Green`, `Joey Tribbiani`);
 console.log(friends); // ['Monica Geller', 'Rachel Green', 'Joey Tribbiani', 'Phoebe Buffay', 'Chandler Bing', 'Ross Geller']
 
-// ЛЕКЦІЯ
+// ======================================================ЛЕКЦІЯ
 
 const a = [1, 2, 3];
 const b = a;
@@ -228,7 +244,7 @@ for (const number of numbers) {
     smallestNumber = number;
   }
 }
-console.log(`smallestNumber:`,smallestNumber);
+console.log(`smallestNumber:`, smallestNumber);
 
 //   Напиши скрипт найбільшого числа
 
@@ -239,4 +255,5 @@ for (const number of numbers) {
     biggestNumber = number;
   }
 }
-console.log(`biggestNumber:`,biggestNumber);
+console.log(`biggestNumber:`, biggestNumber);
+

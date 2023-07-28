@@ -177,9 +177,17 @@ const logins = [`jnknkknk`, `kiwi12345`, `poly12345`, `nklnklnkj`];
 const loginFind = `poly12345`;
 let mes = "";
 
-for (let i = 0; i < logins.length; i += 1) {
-  const login = logins[i];
+// for (let i = 0; i < logins.length; i += 1) {
+//   const login = logins[i];
 
+//   if (login === loginFind) {
+//     mes = `Вітаємо, ${login}`;
+//     break;
+//   }
+//   mes = `Пробачте, такого логіну як ${login} не знайдено`;
+// }
+
+for (let login of logins) {
   if (login === loginFind) {
     mes = `Вітаємо, ${login}`;
     break;
@@ -187,3 +195,48 @@ for (let i = 0; i < logins.length; i += 1) {
   mes = `Пробачте, такого логіну як ${login} не знайдено`;
 }
 console.log(mes);
+
+// МЕТОД .INCLUDES
+
+console.log(logins.includes(`kiwi12345`)); //true
+console.log(logins.includes(`kiwi`)); //false
+console.log(logins.includes(loginFind)); //true
+
+// ТЕРНАРНИЙ ОПЕРАТОР
+
+const mess = logins.includes(loginFind)
+  ? `Вітаємо, ${loginFind}`
+  : `Пробачте, такого логіну як ${loginFind} не знайдено`;
+
+console.log(mess);
+
+// ЗАДАЧА 4
+
+// Напиши скрипт пошуку найменшого часла в масиві
+// при умові що всі числа в масиві різні  не повторюються
+
+// const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 11];
+// цей масив вже є зверху
+
+let smallestNumber = numbers[0];
+
+// console.log(smallestNumber);
+
+for (const number of numbers) {
+  console.log(number);
+  if (number < smallestNumber) {
+    smallestNumber = number;
+  }
+}
+console.log(`smallestNumber:`,smallestNumber);
+
+//   Напиши скрипт найбільшого числа
+
+let biggestNumber = numbers[0];
+
+for (const number of numbers) {
+  if (number > biggestNumber) {
+    biggestNumber = number;
+  }
+}
+console.log(`biggestNumber:`,biggestNumber);

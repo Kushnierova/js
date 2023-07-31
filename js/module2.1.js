@@ -257,3 +257,13 @@ for (const number of numbers) {
 }
 console.log(`biggestNumber:`, biggestNumber);
 
+// ==========================================
+const title = `Top 10 benefits of React framework`;
+
+// const normalizedTitle = title.toLowerCase();
+// const words = normalizedTitle.split(` `);
+// const slug1 = words.join(`-`);
+
+const slug1 = title.toLowerCase().split(` `).join(`-`);
+
+console.log(slug1);

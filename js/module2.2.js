@@ -72,6 +72,7 @@
 
 // ================================================================================
 const logins = [`jnknkknk`, `kiwi`, `poly12345`, `nklnklnkj`];
+// Варіант 1
 // const loginFind = `poly12345`;
 
 // const message = logins.includes(loginFind)
@@ -80,11 +81,74 @@ const logins = [`jnknkknk`, `kiwi`, `poly12345`, `nklnklnkj`];
 
 // console.log(message);
 const findLogin = function (allLogins, loginFind) {
-  console.log(allLogins);
-  
-};
+  // Варіант 2
+  //   console.log(allLogins);
 
+  //   for (const login of logins) {
+  //     if (login === loginFind) {
+  //      return `Вітаємо, ${loginFind}`;
+  //     }
+  //   }
+  //   return `Пробачте, такого логіну як ${loginFind} не знайдено`;
+  // Варіант 3
+  return allLogins.includes(loginFind)
+    ? `Вітаємо, ${loginFind}`
+    : `Пробачте, такого логіну як ${loginFind} не знайдено`;
+};
 console.log(findLogin(logins, `avocado`));
 console.log(findLogin(logins, `orange`));
 console.log(findLogin(logins, `apple`));
 console.log(findLogin(logins, `kiwi`));
+
+// ==========================================================
+// Напиши скрипт пошуку найменшого часла в масиві
+// при умові що всі числа в масиві різні  не повторюються
+
+// console.log(smallestNumber);
+const findSmallesNumber = function (numbers) {
+  let smallestNumber = numbers[0];
+
+  for (const number of numbers) {
+    //   console.log(number);
+    if (number < smallestNumber) {
+      smallestNumber = number;
+    }
+  }
+  return smallestNumber;
+};
+
+console.log(findSmallesNumber([3, 8, 12, -2, 15]));
+console.log(findSmallesNumber([100, 54, 8, 12, 47]));
+console.log(findSmallesNumber([7, 21, 84, 15, 4]));
+
+//   Напиши скрипт найбільшого числа
+const findBiggestNumber = function (numbers) {
+  let biggestNumber = numbers[0];
+
+  for (const number of numbers) {
+    if (number > biggestNumber) {
+      biggestNumber = number;
+    }
+  }
+  return biggestNumber;
+};
+console.log(findBiggestNumber([3, 8, 12, -2, 15]));
+console.log(findBiggestNumber([100, 54, 8, 12, 47]));
+console.log(findBiggestNumber([7, 21, 84, 15, 4]));
+
+// =================================
+
+const changeCase = function (string) {
+
+  const letters = string.split(``);
+  let invertedString = ``;
+
+  for (const letter of letters) {
+    const isInLowerCase = letter === letter.toLowerCase();
+    invertedString += isInLowerCase ? letter.toUpperCase() : letter.toLowerCase();
+  }
+  return invertedString;
+};
+
+console.log(changeCase(`frghBUJKNhdf`));
+console.log(changeCase(`frGVJHBfhdf`));

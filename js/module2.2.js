@@ -229,10 +229,64 @@
 // -Функція повинна повернути новий масивБ в якому будуть аргументи тільки ті
 // починаючи з другого для якого є аналог в оригінальному масиві.
 
-const filterNumbers = function (numbers, ...args) {
-    
-};
+// const filterNumbers = function (array, ...args) {
+//   //   console.log(`array:`, array);
+//   //   console.log(`args:`, args);
 
-console.log(filterNumbers[(1, 2, 3, 4, 5)], 10, 15, 2, 3, 8);
-console.log(filterNumbers[(10, 15, 25, 30)], 23, 30, 18, 15);
-console.log(filterNumbers[(100, 200, 300, 400, 500)], 7, 12, 200, 64);
+//   const uniqueElements = [];
+
+//   for (const element of array) {
+//     // console.log(element);
+//     // console.log(args.includes(element));
+
+//     if (args.includes(element)) {
+//       //   console.log(`${element} є в обох частинах функції`);
+//       uniqueElements.push(element);
+//     }
+//   }
+//   return uniqueElements;
+// };
+
+// console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8));
+// console.log(filterNumbers([10, 15, 25, 30], 23, 30, 18, 15));
+// console.log(filterNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64));
+
+// ===============================================================================
+// Така ж функція, але на пошук слів, вибрати екранізовані книги
+// const filterWords = function (array, ...args) {
+//   const uniquElements = [];
+
+//   for (const element of array) {
+//     if (args.includes(element)) {
+//       uniquElements.push(element);
+//     }
+//   }
+//   return uniquElements;
+// };
+// console.log(
+//   filterWords(
+//     ["Відьмак", "Володар перснів", "Гобіт"],
+//     "Відьмак",
+//     "Володар перснів",
+//     "Гобіт",
+//     "Друзі"
+//   )
+// );
+// console.log(
+//   filterWords(
+//     ["Проклята", "Володар перснів"],
+//     "Проклята",
+//     "Володар перснів",
+//     "Як я зустрів вашу маму",
+//     "Друзі"
+//   )
+// );
+// console.log(
+//   filterWords(
+//     ["Соляріс", "Сільмаріліон", "Мистетство любити", "Бути чи мати"],
+//     "Соляріс",
+//     "Острів проклятих"
+//   )
+// );
+// =============================================================================
+

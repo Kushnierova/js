@@ -147,3 +147,32 @@ let totalFeedback = 0;
 //     console.log(entrie)
 // }
 
+// =============================================================
+const friends = [
+  { name: `Monica`, online: true },
+  { name: `Rachel`, online: true },
+  { name: `Joey`, online: false },
+  { name: `Phoebe`, online: true },
+  { name: `Chandler`, online: false },
+  { name: `Ross`, online: false },
+];
+
+console.table(friends);
+
+// Шукаємо друга по імені
+
+const findFriendByName = function (allFriends, name) {};
+
+console, log(findFriendByName(friends, `Rachel`));
+console, log(findFriendByName(friends, `Chandler`));
+
+// Отримуємо імена усіх друзів
+
+const getAllNames = function (allFriends) {};
+
+console.log(getAllNames(friends));
+
+// Отримуємо імена лише тих друзів які онлайн
+const getOnlineFriends = function (allFriends) {};
+
+console.log(getOnlineFriends(friends));

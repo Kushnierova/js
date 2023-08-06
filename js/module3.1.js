@@ -200,29 +200,79 @@ console.table(friends);
 // ================================================================
 // Отримуємо лише тих друзів які онлайн
 
-const getOnlineFriends = function (allFriends) {
-  const namesFriendsIsOnline = [];
-  for (const friend of allFriends) {
-    // if(friend.online === true){ це тема що if (friend.online) {
-    if (friend.online) {
-      namesFriendsIsOnline.push(friend);
-    }
-  }
-  return namesFriendsIsOnline
-};
+// const getOnlineFriends = function (allFriends) {
+//   const namesFriendsIsOnline = [];
+//   for (const friend of allFriends) {
+//     // if(friend.online === true){ це тема що if (friend.online) {
+//     if (friend.online) {
+//       namesFriendsIsOnline.push(friend);
+//     }
+//   }
+//   return namesFriendsIsOnline
+// };
 
-console.log(getOnlineFriends(friends));
+// console.log(getOnlineFriends(friends));
 
 // ================================================================
 // Отримуємо імена лише тих друзів які not онлайн
-const getNotOnlineFriends = function (allFriends) {
-  const namesFriendsIsNotOnline = [];
-  for (const friend of allFriends) {
-    if (friend.online === false) {
-      namesFriendsIsNotOnline.push(friend.name);
-    }
-  }
-  return namesFriendsIsNotOnline;
+// const getOfflineFriends = function (allFriends) {
+//   const namesFriendsIsOffline = [];
+//   for (const friend of allFriends) {
+//     //if (friend.online===false) { це те саме що if (!friend.online) {
+//     if (!friend.online) {
+//       namesFriendsIsOffline.push(friend.name);
+//     }
+//   }
+//   return namesFriendsIsOffline;
+// };
+
+// console.log(getOfflineFriends(friends));
+// ===============================================================
+// Повернути друзів які онлайн і які не онлайн
+// const getFriendByOnlineStatus = function (allFriends) {
+//   const friendsByStatus = {
+//     online: [],
+//     offline: [],
+//   };
+//   for (const friend of allFriends) {
+//     if (friend.online) {
+//       friendsByStatus.online.push(friend.name);
+//       continue;
+//     }
+//     friendsByStatus.offline.push(friend.name);
+//   }
+//   return friendsByStatus;
+// };
+
+// console.log(getFriendByOnlineStatus(friends));
+
+// ==============================================================
+// const x = {
+//   a: 1,
+//   b: 2,
+//   c: 50,
+//   d: 100,
+// };
+// console.log(Object.keys(x).length);
+// =============================================================
+// Працюємо з колекцією товарів в корзині:
+
+const cart = {
+  items: [],
+  getItems() {},
+  add(product) {},
+  remove(productName) {},
+  clear() {},
+  countTotalPrice() {},
+  increaseQuantity(productName) {},
+  decreaseQuantity(productName) {},
 };
 
-console.log(getNotOnlineFriends(friends));
+console.table(cart.getItems());
+
+cart.add({ name: `🍩`, price: 50 });
+cart.add({ name: `🍱`, price: 100 });
+cart.add({ name: `🍕`, price: 150 });
+cart.add({ name: `🍔`, price: 200 });
+
+console.table(cart.getItems);

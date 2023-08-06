@@ -256,6 +256,18 @@ console.table(friends);
 // console.log(Object.keys(x).length);
 // =============================================================
 // Працюємо з колекцією товарів в корзині:
+// items
+// { name: `🍷`, price: 30 }
+// { name: `🍝`, price: 60 }
+// { name: `🍟`, price: 40 }
+// { name: `🍧`, price: 20 }
+// getItems() повертає продукти
+// add(product) додає продукти
+// remove(productName) видалити продукт
+// clear очищає корзину товарів
+// countTotalPrice рахує загальну суму товарів
+// increaseQuantity збільшити кількість товару
+// decreaseQuantity зменшити кількість товару
 
 const cart = {
   items: [],
@@ -270,9 +282,24 @@ const cart = {
 
 console.table(cart.getItems());
 
-cart.add({ name: `🍩`, price: 50 });
+cart.add({ name: `🍩`, price: 40 });
 cart.add({ name: `🍱`, price: 100 });
-cart.add({ name: `🍕`, price: 150 });
-cart.add({ name: `🍔`, price: 200 });
+cart.add({ name: `🍕`, price: 90 });
+cart.add({ name: `🍔`, price: 110 });
 
-console.table(cart.getItems);
+// console.table(cart.getItems());
+
+cart.remove(`🍷`);
+// console.table(cart.getItems());
+
+// cart.clear();
+// console.table(cart.getItems())
+
+// cart.increaseQuantity(`🍝`);
+// console.table(cart.getItems());
+
+// cart.decreaseQuantity(`🍟`);
+// cart.decreaseQuantity(`🍟`);
+// console.table(cart.getItems());
+
+// console.log(`Total:`, cart.countTotalPrice());

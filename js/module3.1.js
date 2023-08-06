@@ -159,20 +159,70 @@ const friends = [
 
 console.table(friends);
 
+// for (const friend of friends) {
+//   console.log(friend.name);
+//   friend.newprop = 555;
+// }
+// friends[1].newprop = 666;
+// console.table(friends);
+
+// ==============================================================
 // Шукаємо друга по імені
 
-const findFriendByName = function (allFriends, name) {};
+// const findFriendByName = function (allFriends, friendName) {
+//   for (const friend of allFriends) {
+//     // console.log(friend.name);
+//     // console.log(friend.name === friendName);
+//     if (friend.name === friendName) {
+//       return `Name: "${friendName}" is in the array;`;
+//     }
+//   }
+//   return `Name "${friendName}" is not in the array;`;
+// };
 
-console, log(findFriendByName(friends, `Rachel`));
-console, log(findFriendByName(friends, `Chandler`));
+// console.log(findFriendByName(friends, `Rachel`));
+// console.log(findFriendByName(friends, `Robin`));
 
+// ==========================================================
 // Отримуємо імена усіх друзів
 
-const getAllNames = function (allFriends) {};
+// const getAllNames = function (allFriends) {
+//   const names = [];
+//   for (const friend of allFriends) {
+//     // console.log(friend.name);
+//     names.push(friend.name);
+//   }
+//   return names;
+// };
 
-console.log(getAllNames(friends));
+// console.log(getAllNames(friends));
 
-// Отримуємо імена лише тих друзів які онлайн
-const getOnlineFriends = function (allFriends) {};
+// ================================================================
+// Отримуємо лише тих друзів які онлайн
+
+const getOnlineFriends = function (allFriends) {
+  const namesFriendsIsOnline = [];
+  for (const friend of allFriends) {
+    // if(friend.online === true){ це тема що if (friend.online) {
+    if (friend.online) {
+      namesFriendsIsOnline.push(friend);
+    }
+  }
+  return namesFriendsIsOnline
+};
 
 console.log(getOnlineFriends(friends));
+
+// ================================================================
+// Отримуємо імена лише тих друзів які not онлайн
+const getNotOnlineFriends = function (allFriends) {
+  const namesFriendsIsNotOnline = [];
+  for (const friend of allFriends) {
+    if (friend.online === false) {
+      namesFriendsIsNotOnline.push(friend.name);
+    }
+  }
+  return namesFriendsIsNotOnline;
+};
+
+console.log(getNotOnlineFriends(friends));

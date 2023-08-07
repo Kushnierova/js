@@ -112,25 +112,42 @@
 // 🟩====================================================================================
 // ❕Глибока деструктуризація
 
-const profile = {
-  name: `James Fraser`,
-  tag: `Jamie`,
-  country: `Scotland`,
-  avatar: `https://en.wikipedia.org/wiki/Jamie_Fraser_(character)#/media/File:Jamie_Fraser_(Outlander_TV).jpg`,
-  status: {
-    followers: 200000,
-    views: 4827,
-    likes: 1308,
-  },
-};
+// const profile = {
+//   name: `James Fraser`,
+//   tag: `Jamie`,
+//   country: `Scotland`,
+//   avatar: `https://th.bing.com/th/id/R.d8aa6cf865b57021130a37617af18c37?rik=hvxJETzkAW5jog&riu=http%3a%2f%2fcdn.collider.com%2fwp-content%2fuploads%2f2015%2f04%2fjamie-outlander-heughan.jpg&ehk=gIzFfgfgntIi3R3nc8sMdkV%2ftgJGE6pz%2fHODaol9bTU%3d&risl=&pid=ImgRaw&r=0`,
+//   stats: {
+//     followers: 200000,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
 
-const { name, tag, country, avatar } = profile;
+// const {
+//   name,
+//   tag,
+//   country,
+//   avatar,
+//   stats: { followers, views, likes },
+// } = profile;
 
-console.log(name, tag, country, avatar);
+// console.log(name, tag, country, avatar, followers, views, likes);
 
+// 🟩======================================================================================
 // ❕Деструктуризація масиву
 
 const rgb = [255, 100, 80];
+
+const [red, green, blue] = rgb;
+
+console.log(red, green, blue);
+// const authors = {
+//   kiwi: 4,
+//   poly: 7,
+//   ajax: 9,
+//   mango: 6,
+// };
 // 🟩======================================================================================
 
 // 🔄 ЗАДАЧА 1

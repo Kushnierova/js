@@ -182,89 +182,157 @@
 // 🟩======================================================================================
 // ❕Операція rest (Збір)
 
-const profile = {
-  name: `James Fraser`,
-  tag: `Jamie`,
-  country: `Scotland`,
-  avatar: `https://th.bing.com/th/id/R.d8aa6cf865b57021130a37617af18c37?rik=hvxJETzkAW5jog&riu=http%3a%2f%2fcdn.collider.com%2fwp-content%2fuploads%2f2015%2f04%2fjamie-outlander-heughan.jpg&ehk=gIzFfgfgntIi3R3nc8sMdkV%2ftgJGE6pz%2fHODaol9bTU%3d&risl=&pid=ImgRaw&r=0`,
-  stats: {
-    followers: 200000,
-    views: 4827,
-    likes: 1308,
-  },
-};
-
-const { name, tag, location } = profile;
-// 🟩======================================================================================
-// 🔄 ЗАДАЧА 1
-// //❕ Працюємо з колекцією товарів в корзині:
-// // items
-// // { name: `🍷`, price: 30 }
-// // { name: `🍝`, price: 60 }
-// // { name: `🍟`, price: 40 }
-// // { name: `🍧`, price: 20 }
-// // getItems() повертає продукти
-// // add(product) додає продукти
-// // remove(productName) видалити продукт
-// // clear очищає корзину товарів
-// // countTotalPrice рахує загальну суму товарів
-// // increaseQuantity збільшити кількість товару
-// // decreaseQuantity зменшити кількість товару
-
-// const cart = {
-//   items: [
-//     { name: `🍷`, price: 30 },
-//     { name: `🍝`, price: 60 },
-//     { name: `🍟`, price: 40 },
-//     { name: `🍧`, price: 20 },
-//   ],
-//   getItems() {
-//     return cart.items;
+// const profile = {
+//   name: `James Fraser`,
+//   tag: `Jamie`,
+//   country: `Scotland`,
+//   avatar: `https://th.bing.com/th/id/R.d8aa6cf865b57021130a37617af18c37?rik=hvxJETzkAW5jog&riu=http%3a%2f%2fcdn.collider.com%2fwp-content%2fuploads%2f2015%2f04%2fjamie-outlander-heughan.jpg&ehk=gIzFfgfgntIi3R3nc8sMdkV%2ftgJGE6pz%2fHODaol9bTU%3d&risl=&pid=ImgRaw&r=0`,
+//   stats: {
+//     followers: 200000,
+//     views: 4827,
+//     likes: 1308,
 //   },
-//   add(product) {
-//     this.items.push(product);
-//   },
-//   remove(productName) {
-//     const items = this.items;
-//     for (const item of items) {
-//       if (item.name === productName) {
-//         items.splice(item.name.length + 1);
-//       }
-//     }
-//   },
-//   clear() {},
-//   countTotalPrice() {
-//     const items = this.items;
-//     let countTotalPrice = 0;
-//     for (const item of items) {
-//       countTotalPrice += item.price;
-//     }
-//     return countTotalPrice;
-//   },
-//   increaseQuantity(productName) {},
-//   decreaseQuantity(productName) {},
 // };
 
-// // console.table(cart.getItems());
+// // const { name, tag, location } = profile;
 
-// cart.add({ name: `🍩`, price: 40 });
-// cart.add({ name: `🍱`, price: 100 });
-// cart.add({ name: `🍕`, price: 90 });
-// cart.add({ name: `🍔`, price: 110 });
+// // const restProps = {
+// //   avatar: profile.avatar,
+// //   stats: profile.stats,
+// // };
+// // ❕Аналогічний запис //restProps це просто ім'я змінної
+// const { name, tag, country, ...restProps } = profile;
+
+// console.log(name, tag, country);
+// console.log(restProps);
+//  🟩======================================================================================
+// Патерн "Об'єкт налаштувань"
+// деструктуризація паткрна-об'єкта в пдписі функції
+// rest при деструктуризації в підписі
+
+// ❕Це деструктуризація всередині (бажано робити коли багато аргументів)
+// const showProfileInfo = function (userProfile) {
+//   const {
+//     name,
+//     tag,
+//     country,
+//     avatar,
+//     stats: { followers, views, likes },
+//   } = userProfile;
+//   console.log(name, tag, country, avatar, followers, views, likes);
+// };
+
+// ❕Це деструктуризація в підписі (будемо робити коли аргументів не багато)
+// const showProfileInfo = function ({
+//   name,
+//   tag,
+//   country,
+//   avatar,
+//   stats: { followers, views, likes },
+// }) {
+//   console.log(name, tag, country, avatar, followers, views, likes);
+// };
+
+// const profile = {
+//   name: `James Fraser`,
+//   tag: `Jamie`,
+//   country: `Scotland`,
+//   avatar: `https://th.bing.com/th/id/R.d8aa6cf865b57021130a37617af18c37?rik=hvxJETzkAW5jog&riu=http%3a%2f%2fcdn.collider.com%2fwp-content%2fuploads%2f2015%2f04%2fjamie-outlander-heughan.jpg&ehk=gIzFfgfgntIi3R3nc8sMdkV%2ftgJGE6pz%2fHODaol9bTU%3d&risl=&pid=ImgRaw&r=0`,
+//   stats: {
+//     followers: 200000,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
+// showProfileInfo(profile);
+
+//  🟩======================================================================================
+// // ❌Запис функції який буквально нічого не говорить, так робити не треба
+// const fn = function (a, b, c, d, e, f) {};
+
+// fn(10, 5, true, [], {}, 6);
+// // ✅Аналогічний правильний запис, це і є патерн об'єкт налаштувань(якщо більше 3х аргументів)
+// const fn2 = function (params) {};
+
+// fn({
+//   age: 10,
+//   friends: 5,
+//   isOnline: true,
+//   hobbies: [],
+//   games: {},
+//   rating: 6,
+// });
+
+// 🟩======================================================================================
+// 🔄 ЗАДАЧА 1
+//❕ Працюємо з колекцією товарів в корзині:
+// items
+// { name: `🍷`, price: 30 }
+// { name: `🍝`, price: 60 }
+// { name: `🍟`, price: 40 }
+// { name: `🍧`, price: 20 }
+// getItems() повертає продукти
+// add(product) додає продукти
+// remove(productName) видалити продукт
+// clear очищає корзину товарів
+// countTotalPrice рахує загальну суму товарів
+// increaseQuantity збільшити кількість товару
+// decreaseQuantity зменшити кількість товару
+
+const cart = {
+  items: [
+    { name: `🍷`, price: 30 },
+    { name: `🍝`, price: 60 },
+    { name: `🍟`, price: 40 },
+    { name: `🍧`, price: 20 },
+  ],
+  getItems() {
+    return cart.items;
+  },
+  add(product) {
+    this.items.push(product);
+  },
+  remove(productName) {
+    const items = this.items;
+    for (const item of items) {
+      if (item.name === productName) {
+        items.splice(item.name.length + 1);
+      }
+    }
+  },
+  clear() {},
+  countTotalPrice() {
+    const items = this.items;
+    let countTotalPrice = 0;
+    for (const item of items) {
+      countTotalPrice += item.price;
+    }
+    return countTotalPrice;
+  },
+  increaseQuantity(productName) {},
+  decreaseQuantity(productName) {},
+};
 
 // console.table(cart.getItems());
 
-// cart.remove(`🍧`);
+cart.add({ name: `🍩`, price: 40 });
+cart.add({ name: `🍱`, price: 100 });
+cart.add({ name: `🍕`, price: 90 });
+cart.add({ name: `🍔`, price: 110 });
+
+console.table(cart.getItems());
+
+cart.remove(`🍧`);
+console.table(cart.getItems());
+
+// cart.clear();
 // console.table(cart.getItems());
 
-// // cart.clear();
-// // console.table(cart.getItems());
+// cart.increaseQuantity(`🍝`);
+// console.table(cart.getItems());
 
-// // cart.increaseQuantity(`🍝`);
-// // console.table(cart.getItems());
+// cart.decreaseQuantity(`🍟`);
+// cart.decreaseQuantity(`🍟`);
+// console.table(cart.getItems());
 
-// // cart.decreaseQuantity(`🍟`);
-// // cart.decreaseQuantity(`🍟`);
-// // console.table(cart.getItems());
-
-// console.log(`Total:`, cart.countTotalPrice());
+console.log(`Total:`, cart.countTotalPrice());

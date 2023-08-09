@@ -115,28 +115,57 @@
 // 🟩======================================================================================
 // Фільтр
 
-const filter = function (array, test) {
-  const filterArray = [];
-  for (const el of array) {
-    console.log(el);
-  }
-  return filterArray;
-};
+// const filter = function (array, test) {
+//   const filterArray = [];
+//   for (const el of array) {
+//     console.log(el);
+//     // console.log(test(el));
+//     const passed = test(el);
 
-const callback1 = function (value) {
-  return value <= 3;
-};
-const r1 = filter([1, 2, 3, 4, 5, 6], callback1);
-console.log(r1);
-const r2 = filter([4, 5, 6, 7, 8], callback1);
-console.log(r2);
+//     if (passed) {
+//       filterArray.push(el);
+//     }
+//   }
+//   return filterArray;
+// };
+
+// const callback1 = function (value) {
+//   return value >= 3;
+// };
+// const r1 = filter([1, 2, 3, 4, 5, 6], callback1);
+// console.log(r1);
+// const r2 = filter([3, 4, 5, 6, 7, 8], function (value) {
+//   return value <= 6;
+// });
+// console.log(r2);
 
 // const fruits = [
-//   { name: `🍷`, quantity: 30, isFresh: true },
-//   { name: `🍟`, quantity: 40, isFresh: false },
-//   { name: `🍟`, quantity: 40, isFresh: true },
-//   { name: `🍕`, quantity: 90, isFresh: false },
+//   { name: `🍈`, quantity: 30, isFresh: true },
+//   { name: `🍎`, quantity: 40, isFresh: false },
+//   { name: `🥭`, quantity: 50, isFresh: true },
+//   { name: `🍒`, quantity: 90, isFresh: false },
 // ];
+// // Ця функція перевикористовується
+// // const filter = function (array, test) {
+// //     const filterArray = [];
+// //     for (const el of array) {
+// //       console.log(el);
+// //       // console.log(test(el));
+// //       const passed = test(el);
+  
+// //       if (passed) {
+// //         filterArray.push(el);
+// //       }
+// //     }
+// //     return filterArray;
+// //   };
+
+// getFruitsWithQuantity = function (fruit) {
+//   return fruit.quantity >= 50;
+// };
+
+// const r3 = filter(fruits, getFruitsWithQuantity);
+// console.log(r3);
 
 // 🟩======================================================================================
 

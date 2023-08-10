@@ -95,7 +95,7 @@
 
 // 🟩======================================================================================
 
-// // Відкладений виклик: http-виклику
+// // ❕Відкладений виклик: http-виклику
 // // API URL: https://pokeapi.co/api/v2/pokemon
 
 // const onRequestSuccess = function (response) {
@@ -113,7 +113,7 @@
 // console.log(`після fetch`);
 
 // 🟩======================================================================================
-// Фільтр
+// ❕Фільтр
 
 // const filter = function (array, test) {
 //   const filterArray = [];
@@ -145,14 +145,14 @@
 //   { name: `🥭`, quantity: 50, isFresh: true },
 //   { name: `🍒`, quantity: 90, isFresh: false },
 // ];
-// // Ця функція перевикористовується
+// // ❕Ця функція перевикористовується
 // // const filter = function (array, test) {
 // //     const filterArray = [];
 // //     for (const el of array) {
 // //       console.log(el);
 // //       // console.log(test(el));
 // //       const passed = test(el);
-  
+
 // //       if (passed) {
 // //         filterArray.push(el);
 // //       }
@@ -168,8 +168,48 @@
 // console.log(r3);
 
 // 🟩======================================================================================
+// ❕Замикання
+// ❕Функція яка повертіється під час виклику буде мати доступ
+// ❕до усіх локальних змінних (області видимості)
+// ❕батьківської функції(тої з якої її повернули)
+// ❕це називається "замикання"
+
+const fnA = function (parametr) {
+  const innerVariable = `Значення внутрішньої змінної функції fnA`;
+
+  const innerFunction = function () {
+    console.log(parametr);
+    console.log(innerVariable);
+    console.log(`Це виклик innerFunction`);
+  };
+  return innerFunction;
+};
+
+const fnB = fnA(5555);
+fnB();
+console.log(fnB);
 
 // 🟩======================================================================================
+const makeDish = function (shefName, dish) {
+  console.log(`${shefName} готує ${dish}`);
+};
+
+makeDish(`Mango`, `пиріжок`);
+makeDish(`Mango`, `омлет`);
+makeDish(`Mango`, `чай`);
+
+makeDish(`Poly`, `котлети`);
+makeDish(`Poly`, `супчик`);
+makeDish(`Poly`, `кава`);
+
+const makeSheff = function (name) {
+    return makeDish=function(dish){
+        console.log(`${shefName} `)
+    }
+};
+
+// const mango = makeSheff(`Mango`);
+// const poly = makeSheff(`Poly`);
 
 // 🟩======================================================================================
 

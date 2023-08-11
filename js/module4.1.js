@@ -168,49 +168,56 @@
 // console.log(r3);
 
 // 🟩======================================================================================
-// ❕Замикання
-// ❕Функція яка повертіється під час виклику буде мати доступ
-// ❕до усіх локальних змінних (області видимості)
-// ❕батьківської функції(тої з якої її повернули)
-// ❕це називається "замикання"
+// // ❕Замикання
+// // ❕Функція яка повертіється під час виклику буде мати доступ
+// // ❕до усіх локальних змінних (області видимості)
+// // ❕батьківської функції(тої з якої її повернули)
+// // ❕це називається "замикання"
 
-const fnA = function (parametr) {
-  const innerVariable = `Значення внутрішньої змінної функції fnA`;
+// const fnA = function (parametr) {
+//   const innerVariable = `Значення внутрішньої змінної функції fnA`;
 
-  const innerFunction = function () {
-    console.log(parametr);
-    console.log(innerVariable);
-    console.log(`Це виклик innerFunction`);
-  };
-  return innerFunction;
-};
+//   const innerFunction = function () {
+//     console.log(parametr);
+//     console.log(innerVariable);
+//     console.log(`Це виклик innerFunction`);
+//   };
+//   return innerFunction;
+// };
 
-const fnB = fnA(5555);
-fnB();
-console.log(fnB);
+// const fnB = fnA(5555);
+// fnB();
+// console.log(fnB);
 
 // 🟩======================================================================================
-const makeDish = function (shefName, dish) {
-  console.log(`${shefName} готує ${dish}`);
-};
+// const makeDish = function (shefName, dish) {
+//   console.log(`${shefName} готує ${dish}`);
+// };
 
-makeDish(`Mango`, `пиріжок`);
-makeDish(`Mango`, `омлет`);
-makeDish(`Mango`, `чай`);
+// makeDish(`Mango`, `пиріжок`);
+// makeDish(`Mango`, `омлет`);
+// makeDish(`Mango`, `чай`);
 
-makeDish(`Poly`, `котлети`);
-makeDish(`Poly`, `супчик`);
-makeDish(`Poly`, `кава`);
+// makeDish(`Poly`, `котлети`);
+// makeDish(`Poly`, `супчик`);
+// makeDish(`Poly`, `кава`);
 
 const makeSheff = function (name) {
-    return makeDish=function(dish){
-        console.log(`${shefName} `)
-    }
+  const makeDish = function (dish) {
+    console.log(`${name} готує ${dish} `);
+  };
+  return makeDish;
 };
 
-// const mango = makeSheff(`Mango`);
-// const poly = makeSheff(`Poly`);
+const mango = makeSheff(`Mango`);
+const poly = makeSheff(`Poly`);
 
+mango(`пиріжок`);
+mango(`омлет`);
+mango(`чай`);
+poly(`котлети`);
+poly(`супчик`);
+poly(`каву`);
 // 🟩======================================================================================
 
 // 🟩======================================================================================

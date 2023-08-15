@@ -342,3 +342,32 @@
 // console.log(myLib.getValue())
 
 // 🟩======================================================================================
+
+// const salaryManageFactory = function (employeeName, baseSalary = 0) {
+//   // let salary це приватна змінна, неможливо до неї достукатись з зовнішнього коду
+//   let salary = baseSalary;
+
+//   return {
+//     raise(amount) {
+//       if (amount > 1000) {
+//         return "так робити не можна";
+//       }
+//       salary += amount;
+//     },
+//     lower(amount) {
+//       salary -= amount;
+//     },
+//     current() {
+//       return `Зарплата : ${employeeName} - ${salary}`;
+//     },
+//   };
+// };
+
+// const salaryManager = salaryManageFactory(`Mango`, 5000);
+
+// salaryManager.raise(1000000);
+// console.log(salaryManager.raise(1000000))
+
+// console.log(salaryManager.current());
+
+// 🟩======================================================================================
